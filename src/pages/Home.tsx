@@ -48,7 +48,8 @@ export default function Home() {
       name: product.name,
       price: product.discount || product.price,
       image: product.mainImage,
-      quantity: 1
+      quantity: '1',
+      size: ''
     });
   };
 
