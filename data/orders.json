@@ -1,29 +1,5 @@
 [
   {
-    "id": "ORD-1004",
-    "createdAt": "2026-06-05T16:45:00.000Z",
-    "customer": {
-      "name": "Sara Malik",
-      "mobile": "+92 345 7890123",
-      "email": "sara.malik@gmail.com",
-      "address": "23-A, Model Town",
-      "city": "Faisalabad",
-      "district": "Faisalabad"
-    },
-    "items": [
-      {
-        "id": "item-7",
-        "name": "Floral Print Maxi Dress",
-        "image": "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=500&h=700&fit=crop",
-        "price": "2900",
-        "quantity": "1",
-        "size": "S"
-      }
-    ],
-    "total": "2900",
-    "status": "Delivered"
-  },
-  {
     "id": "ORD-1005",
     "createdAt": "2026-05-28T11:20:00.000Z",
     "customer": {
