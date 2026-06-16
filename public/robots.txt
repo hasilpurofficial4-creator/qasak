@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://qasak.vercel.app/sitemap.xml
