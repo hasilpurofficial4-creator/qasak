@@ -104,18 +104,16 @@
 
 .menu-toggle {
   display: none;
-  flex-direction: column;
-  gap: 5px;
   background: none;
+  color: var(--text-primary);
   padding: 8px;
+  border-radius: 8px;
+  align-items: center;
+  justify-content: center;
 }
 
-.menu-toggle span {
-  width: 24px;
-  height: 2px;
-  background: var(--text-primary);
-  border-radius: 2px;
-  transition: var(--transition);
+.menu-toggle:hover {
+  background: rgba(184, 41, 227, 0.1);
 }
 
 /* Cart Drawer */

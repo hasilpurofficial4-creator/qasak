@@ -94,7 +94,13 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-  text-align: center;
+}
+
+.about-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
 }
 
 .about-contact-label {

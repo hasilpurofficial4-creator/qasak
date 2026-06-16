@@ -2,6 +2,7 @@ import React, { useState, useCallback, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { CartProvider } from './store/CartContext';
+import { SettingsProvider } from './store/SettingsContext';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import IntroScreen from './components/IntroScreen';
@@ -50,25 +51,27 @@ export default function App() {
   return (
     <BrowserRouter>
       <CartProvider>
-        <ScrollToTop />
-        {showIntro && <IntroScreen onComplete={handleIntroComplete} />}
-        <Toaster
-          position="top-right"
-          toastOptions={{
-            duration: 3000,
-            style: {
-              background: '#1a1a2e',
-              color: '#fff',
-              border: '1px solid rgba(184, 41, 227, 0.3)',
-              borderRadius: '12px'
-            }
-          }}
-        />
-        <Routes>
-          <Route path="/admin" element={<Admin />} />
-          <Route path="/admin/*" element={<Admin />} />
-          <Route path="/*" element={<CustomerLayout />} />
-        </Routes>
+        <SettingsProvider>
+          <ScrollToTop />
+          {showIntro && <IntroScreen onComplete={handleIntroComplete} />}
+          <Toaster
+            position="top-right"
+            toastOptions={{
+              duration: 3000,
+              style: {
+                background: '#1a1a2e',
+                color: '#fff',
+                border: '1px solid rgba(184, 41, 227, 0.3)',
+                borderRadius: '12px'
+              }
+            }}
+          />
+          <Routes>
+            <Route path="/admin" element={<Admin />} />
+            <Route path="/admin/*" element={<Admin />} />
+            <Route path="/*" element={<CustomerLayout />} />
+          </Routes>
+        </SettingsProvider>
       </CartProvider>
     </BrowserRouter>
   );

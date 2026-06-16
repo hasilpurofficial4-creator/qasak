@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { createContact } from '../api/service';
+import { useSettings } from '../store/SettingsContext';
+import { Phone, Mail, MapPin, MessageCircle } from '../components/Icons';
 import toast from 'react-hot-toast';
 import './Contact.css';
 
 export default function Contact() {
+  const { settings } = useSettings();
   const [method, setMethod] = useState('email');
   const [form, setForm] = useState({ name: '', contact: '', subject: '', message: '' });
   const [submitting, setSubmitting] = useState(false);
@@ -40,31 +43,31 @@ export default function Contact() {
           <div className="contact-info glass-card">
             <h3>Get In Touch</h3>
             <div className="contact-info-item">
-              <span className="contact-icon">📱</span>
+              <div className="contact-icon-wrap"><Phone size={20} color="var(--neon-blue)" /></div>
               <div>
                 <p className="contact-label">Mobile</p>
-                <p className="contact-value">+92 300 0000000</p>
+                <p className="contact-value">{settings.mobile || '+92 300 0000000'}</p>
               </div>
             </div>
             <div className="contact-info-item">
-              <span className="contact-icon">📧</span>
+              <div className="contact-icon-wrap"><Mail size={20} color="var(--neon-blue)" /></div>
               <div>
                 <p className="contact-label">Email</p>
-                <p className="contact-value">info@qasakbymaira.com</p>
+                <p className="contact-value">{settings.email || 'info@qasakbymaira.com'}</p>
               </div>
             </div>
             <div className="contact-info-item">
-              <span className="contact-icon">📍</span>
+              <div className="contact-icon-wrap"><MapPin size={20} color="var(--neon-blue)" /></div>
               <div>
                 <p className="contact-label">Address</p>
-                <p className="contact-value">Fashion District, Pakistan</p>
+                <p className="contact-value">{settings.address || 'Fashion District, Pakistan'}</p>
               </div>
             </div>
             <div className="contact-info-item">
-              <span className="contact-icon">💬</span>
+              <div className="contact-icon-wrap"><MessageCircle size={20} color="var(--neon-blue)" /></div>
               <div>
                 <p className="contact-label">WhatsApp</p>
-                <p className="contact-value">+92 300 0000000</p>
+                <p className="contact-value">{settings.mobile || '+92 300 0000000'}</p>
               </div>
             </div>
           </div>

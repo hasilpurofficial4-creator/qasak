@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { getItems, addItem, updateItem, deleteItem, getCategories, addCategory, updateCategory, deleteCategory, getOrders, updateOrder, deleteOrder, getContacts, deleteContact, getSettings, updateSettings, uploadToImgBB } from '../api/service';
 import toast from 'react-hot-toast';
 import type { Product, Category, Order, ContactMessage, Settings } from '../types';
+import { BarChart, ShoppingBag, Grid, Package, MessageCircle, Settings as SettingsIcon, Home, LogOut, Bell, Trash, ShoppingCart, Users, Menu } from '../components/Icons';
 import './AdminDashboard.css';
 
 type Tab = 'dashboard' | 'products' | 'categories' | 'orders' | 'contacts' | 'settings';
@@ -58,7 +59,7 @@ export default function AdminDashboard({ onLogout }: { onLogout: () => void }) {
           toast.success('New Order Received!', { duration: 5000 });
           const latestOrder = ordersRes.find((o: Order) => o.status === 'New Order');
           if (latestOrder) {
-            toast(`Customer: ${latestOrder.customer.name}\nTotal: Rs. ${latestOrder.total}`, { duration: 5000, icon: '🛒' });
+        toast(`Customer: ${latestOrder.customer.name}\nTotal: Rs. ${latestOrder.total}`, { duration: 5000 });
           }
         }
         setOrders(ordersRes);
@@ -73,13 +74,13 @@ export default function AdminDashboard({ onLogout }: { onLogout: () => void }) {
     onLogout();
   };
 
-  const tabs: { key: Tab; label: string; icon: string }[] = [
-    { key: 'dashboard', label: 'Dashboard', icon: '📊' },
-    { key: 'products', label: 'Products', icon: '👗' },
-    { key: 'categories', label: 'Categories', icon: '📁' },
-    { key: 'orders', label: 'Orders', icon: '📦' },
-    { key: 'contacts', label: 'Messages', icon: '💬' },
-    { key: 'settings', label: 'Settings', icon: '⚙️' },
+  const tabs: { key: Tab; label: string; icon: React.ReactNode }[] = [
+    { key: 'dashboard', label: 'Dashboard', icon: <BarChart size={18} /> },
+    { key: 'products', label: 'Products', icon: <ShoppingBag size={18} /> },
+    { key: 'categories', label: 'Categories', icon: <Grid size={18} /> },
+    { key: 'orders', label: 'Orders', icon: <Package size={18} /> },
+    { key: 'contacts', label: 'Messages', icon: <MessageCircle size={18} /> },
+    { key: 'settings', label: 'Settings', icon: <SettingsIcon size={18} /> },
   ];
 
   return (
@@ -107,10 +108,10 @@ export default function AdminDashboard({ onLogout }: { onLogout: () => void }) {
         </nav>
         <div className="sidebar-footer">
           <button className="sidebar-link" onClick={() => navigate('/')}>
-            <span className="sidebar-icon">🏠</span><span>View Site</span>
+            <span className="sidebar-icon"><Home size={18} /></span><span>View Site</span>
           </button>
           <button className="sidebar-link logout" onClick={handleLogout}>
-            <span className="sidebar-icon">🚪</span><span>Logout</span>
+            <span className="sidebar-icon"><LogOut size={18} /></span><span>Logout</span>
           </button>
         </div>
       </aside>
@@ -118,11 +119,11 @@ export default function AdminDashboard({ onLogout }: { onLogout: () => void }) {
       {/* Main Content */}
       <main className="admin-main">
         <div className="admin-topbar">
-          <button className="sidebar-toggle" onClick={() => setSidebarOpen(!sidebarOpen)}>☰</button>
+          <button className="sidebar-toggle" onClick={() => setSidebarOpen(!sidebarOpen)}><Menu size={22} /></button>
           <h2 className="admin-page-title">{tabs.find(t => t.key === activeTab)?.label}</h2>
           <div className="topbar-actions">
-            <button className="notification-btn" onClick={() => setActiveTab('orders')}>
-              🔔
+            <button className="notification-btn" onClick={() => setActiveTab('orders')} aria-label="Notifications">
+              <Bell size={20} />
               {newOrderCount > 0 && <span className="notif-badge">{newOrderCount}</span>}
             </button>
           </div>
@@ -154,28 +155,28 @@ function DashboardTab({ products, orders, contacts, categories }: { products: Pr
     <div className="dashboard-tab">
       <div className="stats-grid">
         <div className="stat-card glass-card">
-          <div className="stat-card-icon">👗</div>
+          <div className="stat-card-icon"><ShoppingBag size={28} color="var(--neon-purple)" /></div>
           <div className="stat-card-info">
             <span className="stat-card-number">{products.length}</span>
             <span className="stat-card-label">Total Products</span>
           </div>
         </div>
         <div className="stat-card glass-card">
-          <div className="stat-card-icon">📦</div>
+          <div className="stat-card-icon"><Package size={28} color="var(--neon-blue)" /></div>
           <div className="stat-card-info">
             <span className="stat-card-number">{orders.length}</span>
             <span className="stat-card-label">Total Orders</span>
           </div>
         </div>
         <div className="stat-card glass-card">
-          <div className="stat-card-icon">👥</div>
+          <div className="stat-card-icon"><Users size={28} color="var(--neon-pink)" /></div>
           <div className="stat-card-info">
             <span className="stat-card-number">{new Set(orders.map(o => o.customer?.email || o.customer?.mobile)).size}</span>
             <span className="stat-card-label">Customers</span>
           </div>
         </div>
         <div className="stat-card glass-card">
-          <div className="stat-card-icon">💬</div>
+          <div className="stat-card-icon"><MessageCircle size={28} color="var(--neon-gold)" /></div>
           <div className="stat-card-info">
             <span className="stat-card-number">{contacts.length}</span>
             <span className="stat-card-label">Messages</span>
@@ -379,7 +380,7 @@ function ProductsTab({ products, categories, onRefresh }: { products: Product[];
                 <td>{p.discount ? `Rs. ${Number(p.discount).toLocaleString()}` : '-'}</td>
                 <td>
                   <button className="table-btn edit" onClick={() => handleEdit(p)}>Edit</button>
-                  <button className="table-btn delete" onClick={() => handleDelete(p.id)}>🗑</button>
+                  <button className="table-btn delete" onClick={() => handleDelete(p.id)}><Trash size={16} color="#ff4444" /></button>
                 </td>
               </tr>
             ))}
@@ -456,7 +457,7 @@ function CategoriesTab({ categories, onRefresh }: { categories: Category[]; onRe
             </div>
             <div className="category-admin-actions">
               <button className="table-btn edit" onClick={() => handleEdit(c)}>Edit</button>
-              <button className="table-btn delete" onClick={() => handleDelete(c.id)}>🗑</button>
+              <button className="table-btn delete" onClick={() => handleDelete(c.id)}><Trash size={16} color="#ff4444" /></button>
             </div>
           </div>
         ))}
@@ -548,7 +549,7 @@ function OrdersTab({ orders, onRefresh }: { orders: Order[]; onRefresh: () => vo
                   Mark {statusFlow[order.status]}
                 </button>
               )}
-              <button className="table-btn delete" onClick={() => handleDelete(order.id)}>🗑</button>
+              <button className="table-btn delete" onClick={() => handleDelete(order.id)}><Trash size={16} color="#ff4444" /></button>
             </div>
           </div>
         ))}
@@ -579,7 +580,7 @@ function ContactsTab({ contacts, onRefresh }: { contacts: ContactMessage[]; onRe
                 <p className="contact-card-name">{msg.name}</p>
                 <p className="contact-card-meta">{msg.method} · {msg.contact}</p>
               </div>
-              <button className="table-btn delete" onClick={() => handleDelete(msg.id)}>🗑</button>
+              <button className="table-btn delete" onClick={() => handleDelete(msg.id)}><Trash size={16} color="#ff4444" /></button>
             </div>
             <p className="contact-card-subject">{msg.subject}</p>
             <p className="contact-card-message">{msg.message}</p>

@@ -1,21 +1,26 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../store/CartContext';
+import { useSettings } from '../store/SettingsContext';
+import { ShoppingCart, User, Menu, X, Trash } from './Icons';
 import './Header.css';
 
 export default function Header() {
   const { totalItems, items, removeFromCart } = useCart();
+  const { settings } = useSettings();
   const [cartOpen, setCartOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
+
+  const brandName = settings.headerText || settings.siteName || 'QASAK';
 
   return (
     <>
       <header className="header">
         <div className="header-inner">
           <Link to="/" className="logo">
-            <span className="logo-text">QASAK</span>
-            <span className="logo-sub">BY MAIRA</span>
+            <span className="logo-text">{brandName.split(' ')[0] || 'QASAK'}</span>
+            <span className="logo-sub">{brandName.split(' ').slice(1).join(' ') || 'BY MAIRA'}</span>
           </Link>
 
           <nav className={`nav ${menuOpen ? 'nav-open' : ''}`}>
@@ -27,21 +32,15 @@ export default function Header() {
           </nav>
 
           <div className="header-actions">
-            <button className="cart-btn" onClick={() => setCartOpen(true)}>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
-                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
-              </svg>
+            <button className="cart-btn" onClick={() => setCartOpen(true)} aria-label="Cart">
+              <ShoppingCart size={22} />
               {totalItems > 0 && <span className="badge">{totalItems}</span>}
             </button>
-            <Link to="/admin" className="admin-btn">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                <circle cx="12" cy="7" r="4"/>
-              </svg>
+            <Link to="/admin" className="admin-btn" aria-label="Admin">
+              <User size={20} />
             </Link>
-            <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
-              <span></span><span></span><span></span>
+            <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label="Menu">
+              {menuOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
           </div>
         </div>
@@ -52,7 +51,9 @@ export default function Header() {
       <div className={`cart-drawer ${cartOpen ? 'open' : ''}`}>
         <div className="cart-drawer-header">
           <h3>Shopping Cart</h3>
-          <button onClick={() => setCartOpen(false)} className="close-btn">✕</button>
+          <button onClick={() => setCartOpen(false)} className="close-btn" aria-label="Close">
+            <X size={20} />
+          </button>
         </div>
         <div className="cart-drawer-items">
           {items.length === 0 ? (
@@ -66,10 +67,8 @@ export default function Header() {
                   <p className="cart-item-price">Rs. {item.price} × {item.quantity}</p>
                   {item.size && <p className="cart-item-size">Size: {item.size}</p>}
                 </div>
-                <button className="trash-btn" onClick={() => removeFromCart(item.id)}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff4444" strokeWidth="2">
-                    <polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
-                  </svg>
+                <button className="trash-btn" onClick={() => removeFromCart(item.id)} aria-label="Remove">
+                  <Trash size={18} color="#ff4444" />
                 </button>
               </div>
             ))
