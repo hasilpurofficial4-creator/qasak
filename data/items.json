@@ -1,153 +1,184 @@
 [
   {
-    "id": "item-1",
-    "name": "Royal Silk Evening Gown",
-    "mainImage": "https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=500&h=700&fit=crop",
+    "id": "item-w1",
+    "name": "Classic Gold Chronograph",
+    "mainImage": "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=500&h=700&fit=crop",
     "extraImages": [
-      "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=500&h=700&fit=crop",
-      "https://images.unsplash.com/photo-1518622358385-8ea7d0794bf6?w=500&h=700&fit=crop"
+      "https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?w=500&h=700&fit=crop",
+      "https://images.unsplash.com/photo-1509048191080-d2984bad6ae5?w=500&h=700&fit=crop",
+      "https://images.unsplash.com/photo-1533139502658-0198f920d8e8?w=500&h=700&fit=crop"
     ],
-    "description": "A stunning royal silk evening gown crafted from premium Italian silk. Features a flattering A-line silhouette with intricate hand-stitched embellishments. Perfect for galas, red carpets, and special occasions.",
-    "price": "8500",
-    "discount": "6800",
-    "category": "Party Wear",
-    "size": "S,M,L,XL",
-    "quantity": "12",
-    "quantityType": "piece"
-  },
-  {
-    "id": "item-2",
-    "name": "Classic Cotton Kurta Set",
-    "mainImage": "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=500&h=700&fit=crop",
-    "extraImages": [
-      "https://images.unsplash.com/photo-1583391733956-6c78276477e2?w=500&h=700&fit=crop"
-    ],
-    "description": "Elegant cotton kurta set with traditional embroidery work. Includes matching palazzo pants and dupatta. Comfortable fabric suitable for all seasons. A must-have for your ethnic wardrobe.",
-    "price": "3200",
-    "discount": "2400",
-    "category": "Traditional",
-    "size": "S,M,L,XL,XXL",
-    "quantity": "30",
-    "quantityType": "piece"
-  },
-  {
-    "id": "item-3",
-    "name": "Premium Slim Fit Blazer",
-    "mainImage": "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=500&h=700&fit=crop",
-    "extraImages": [
-      "https://images.unsplash.com/photo-1507019895397-e8676e5788e7?w=500&h=700&fit=crop"
-    ],
-    "description": "Premium slim-fit blazer crafted from fine wool blend. Features modern notch lapels, two-button closure, and functional pockets. Ideal for business meetings and formal events.",
-    "price": "9500",
-    "discount": "7500",
-    "category": "Formal Wear",
-    "size": "M,L,XL",
-    "quantity": "8",
-    "quantityType": "piece"
-  },
-  {
-    "id": "item-4",
-    "name": "Denim Casual Jacket",
-    "mainImage": "https://images.unsplash.com/photo-1551537482-f2075a1d41f2?w=500&h=700&fit=crop",
-    "extraImages": [
-      "https://images.unsplash.com/photo-1544022613-e87ca75a784a?w=500&h=700&fit=crop"
-    ],
-    "description": "Classic denim jacket with a modern twist. Features a comfortable relaxed fit, brass button closure, and chest pockets. Layer it over any outfit for an effortlessly cool look.",
-    "price": "4200",
-    "discount": "3500",
-    "category": "Casual Wear",
-    "size": "S,M,L,XL",
-    "quantity": "20",
-    "quantityType": "piece"
-  },
-  {
-    "id": "item-5",
-    "name": "Embroidered Bridal Lehenga",
-    "mainImage": "https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?w=500&h=700&fit=crop",
-    "extraImages": [
-      "https://images.unsplash.com/photo-1610030181087-540017dc9d27?w=500&h=700&fit=crop"
-    ],
-    "description": "Exquisite bridal lehenga with intricate zardozi embroidery. Heavy embellished blouse with matching dupatta. Made with premium fabric and handcrafted details for your special day.",
-    "price": "45000",
-    "discount": "38000",
-    "category": "Bridal Collection",
-    "size": "S,M,L",
-    "quantity": "3",
-    "quantityType": "piece"
-  },
-  {
-    "id": "item-6",
-    "name": "Cashmere Winter Shawl",
-    "mainImage": "https://images.unsplash.com/photo-1544923246-77307dd270b1?w=500&h=700&fit=crop",
-    "extraImages": [],
-    "description": "Luxurious pure cashmere shawl, handwoven with traditional patterns. Lightweight yet incredibly warm. A timeless accessory for the winter season.",
-    "price": "12000",
-    "discount": "9500",
-    "category": "Winter Collection",
+    "description": "Elegant gold-tone chronograph watch with sapphire crystal glass. Features date display, luminous hands, and genuine leather strap. Water-resistant to 50m. A timeless statement piece for any occasion.",
+    "price": "12500",
+    "discount": "9800",
+    "category": "Watch",
     "size": "",
     "quantity": "15",
     "quantityType": "piece"
   },
   {
-    "id": "item-7",
-    "name": "Floral Print Maxi Dress",
-    "mainImage": "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=500&h=700&fit=crop",
+    "id": "item-w2",
+    "name": "Silver Moonphase Watch",
+    "mainImage": "https://images.unsplash.com/photo-1587836374828-4dbafa94cf09?w=500&h=700&fit=crop",
     "extraImages": [
-      "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=500&h=700&fit=crop"
+      "https://images.unsplash.com/photo-1548171245-1874d4030f24?w=500&h=700&fit=crop",
+      "https://images.unsplash.com/photo-1526045431048-f857369baa09?w=500&h=700&fit=crop",
+      "https://images.unsplash.com/photo-1612817159949-195b6eb9e31a?w=500&h=700&fit=crop"
     ],
-    "description": "Beautiful floral print maxi dress with flowing silhouette. Features a V-neckline, adjustable waist tie, and side pockets. Perfect for brunches and outdoor events.",
-    "price": "3800",
-    "discount": "2900",
-    "category": "Casual Wear",
-    "size": "S,M,L,XL",
+    "description": "Stunning silver moonphase watch with automatic movement. Brushed stainless steel case with exhibition caseback. Roman numeral dial with blue steel hands. Includes premium metal bracelet.",
+    "price": "18500",
+    "discount": "14500",
+    "category": "Watch",
+    "size": "",
+    "quantity": "8",
+    "quantityType": "piece"
+  },
+  {
+    "id": "item-w3",
+    "name": "Sport Digital Watch",
+    "mainImage": "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=500&h=700&fit=crop",
+    "extraImages": [
+      "https://images.unsplash.com/photo-1539874754764-5a96559165b0?w=500&h=700&fit=crop",
+      "https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=500&h=700&fit=crop",
+      "https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?w=500&h=700&fit=crop"
+    ],
+    "description": "Rugged digital sport watch built for active lifestyles. Features stopwatch, alarm, countdown timer, and LED backlight. Shock-resistant case with rubber strap. Water-resistant to 100m.",
+    "price": "4500",
+    "discount": "3200",
+    "category": "Watch",
+    "size": "",
+    "quantity": "30",
+    "quantityType": "piece"
+  },
+  {
+    "id": "item-w4",
+    "name": "Rose Gold Minimalist",
+    "mainImage": "https://images.unsplash.com/photo-1523162612945-8822d95c8e72?w=500&h=700&fit=crop",
+    "extraImages": [
+      "https://images.unsplash.com/photo-1547996160-81dfa63595aa?w=500&h=700&fit=crop",
+      "https://images.unsplash.com/photo-1618220179428-22790b461013?w=500&h=700&fit=crop",
+      "https://images.unsplash.com/photo-1530908184549-56d3a0b5e3dd?w=500&h=700&fit=crop"
+    ],
+    "description": "Ultra-slim rose gold minimalist watch with clean dial design. Japanese quartz movement with scratch-resistant mineral crystal. Mesh stainless steel band with magnetic clasp. Perfect everyday elegance.",
+    "price": "8500",
+    "discount": "6500",
+    "category": "Watch",
+    "size": "",
+    "quantity": "20",
+    "quantityType": "piece"
+  },
+  {
+    "id": "item-w5",
+    "name": "Diamond Bezel Luxury Watch",
+    "mainImage": "https://images.unsplash.com/photo-1548171245-1874d4030f24?w=500&h=700&fit=crop",
+    "extraImages": [
+      "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=500&h=700&fit=crop",
+      "https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?w=500&h=700&fit=crop",
+      "https://images.unsplash.com/photo-1606859191213-789014616e73?w=500&h=700&fit=crop"
+    ],
+    "description": "Premium luxury watch with genuine diamond-set bezel. Mother-of-pearl dial with diamond hour markers. Swiss quartz movement with stainless steel and gold-tone bracelet. Comes in a luxury gift box.",
+    "price": "35000",
+    "discount": "28000",
+    "category": "Watch",
+    "size": "",
+    "quantity": "5",
+    "quantityType": "piece"
+  },
+  {
+    "id": "item-p1",
+    "name": "Oud Royal Eau de Parfum",
+    "mainImage": "https://images.unsplash.com/photo-1594035910387-fea081ac36e0?w=500&h=700&fit=crop",
+    "extraImages": [
+      "https://images.unsplash.com/photo-1541643600914-78b084683601?w=500&h=700&fit=crop",
+      "https://images.unsplash.com/photo-1587017539504-67cfbddac569?w=500&h=700&fit=crop",
+      "https://images.unsplash.com/photo-1563170351-be82bc888aa4?w=500&h=700&fit=crop"
+    ],
+    "description": "Rich and opulent oud-based fragrance with notes of saffron, rose, and sandalwood. Long-lasting 8+ hours with premium concentration. Handcrafted in small batches for exclusive quality.",
+    "price": "6500",
+    "discount": "4800",
+    "category": "Perfume",
+    "size": "",
     "quantity": "25",
-    "quantityType": "piece"
+    "quantityType": "bottle"
   },
   {
-    "id": "item-8",
-    "name": "Sequin Party Top",
-    "mainImage": "https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=500&h=700&fit=crop",
-    "extraImages": [],
-    "description": "Eye-catching sequin party top with a relaxed fit. Fully lined with premium quality sequins that catch the light beautifully. Pair with jeans or a skirt for a night out.",
-    "price": "2800",
-    "discount": "2200",
-    "category": "Party Wear",
-    "size": "S,M,L",
-    "quantity": "18",
-    "quantityType": "piece"
+    "id": "item-p2",
+    "name": "Floral Blossom Perfume",
+    "mainImage": "https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?w=500&h=700&fit=crop",
+    "extraImages": [
+      "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=500&h=700&fit=crop",
+      "https://images.unsplash.com/photo-1557170334-a9632e77c6e4?w=500&h=700&fit=crop",
+      "https://images.unsplash.com/photo-1585386959984-a41552031c76?w=500&h=700&fit=crop"
+    ],
+    "description": "Delicate floral fragrance with top notes of jasmine, peony, and bergamot. Heart of Bulgarian rose and lily of the valley. Light and fresh, perfect for daytime wear. 100ml bottle.",
+    "price": "4200",
+    "discount": "3200",
+    "category": "Perfume",
+    "size": "",
+    "quantity": "30",
+    "quantityType": "bottle"
   },
   {
-    "id": "item-9",
-    "name": "Tailored Office Trousers",
-    "mainImage": "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=500&h=700&fit=crop",
-    "extraImages": [],
-    "description": "Perfectly tailored office trousers in premium stretch fabric. Features a high-waisted design, pressed creases, and a comfortable fit that moves with you all day.",
-    "price": "3500",
-    "discount": "",
-    "category": "Formal Wear",
-    "size": "S,M,L,XL",
-    "quantity": "22",
-    "quantityType": "piece"
-  },
-  {
-    "id": "item-10",
-    "name": "Lawn Printed 3-Piece Suit",
-    "mainImage": "https://images.unsplash.com/photo-1583391733956-6c78276477e2?w=500&h=700&fit=crop",
-    "extraImages": [],
-    "description": "Premium lawn 3-piece suit with vibrant digital prints. Includes shirt, trousers, and chiffon dupatta. Breathable fabric perfect for summer days.",
+    "id": "item-p3",
+    "name": "Musk Noir Collection",
+    "mainImage": "https://images.unsplash.com/photo-1595425964272-fc617fa71e65?w=500&h=700&fit=crop",
+    "extraImages": [
+      "https://images.unsplash.com/photo-1590736969955-71cc94801759?w=500&h=700&fit=crop",
+      "https://images.unsplash.com/photo-1615368144592-35d9b4a0e4f0?w=500&h=700&fit=crop",
+      "https://images.unsplash.com/photo-1528740561666-dc2479dc08ab?w=500&h=700&fit=crop"
+    ],
+    "description": "Bold and mysterious musk fragrance with deep notes of black musk, amber, and vanilla. Smoky undertones with a hint of leather. Long-lasting oriental-inspired scent. 75ml premium bottle.",
     "price": "5500",
     "discount": "4200",
-    "category": "Traditional",
-    "size": "S,M,L,XL",
-    "quantity": "35",
-    "quantityType": "piece"
+    "category": "Perfume",
+    "size": "",
+    "quantity": "18",
+    "quantityType": "bottle"
   },
   {
-    "id": "item-11",
+    "id": "item-p4",
+    "name": "Fresh Citrus Cologne",
+    "mainImage": "https://images.unsplash.com/photo-1619994403073-2cec844b8c63?w=500&h=700&fit=crop",
+    "extraImages": [
+      "https://images.unsplash.com/photo-1610461888750-10bfc601b874?w=500&h=700&fit=crop",
+      "https://images.unsplash.com/photo-1594035910387-fea081ac36e0?w=500&h=700&fit=crop",
+      "https://images.unsplash.com/photo-1547887538-e3a2f32cb1cc?w=500&h=700&fit=crop"
+    ],
+    "description": "Energizing citrus cologne with zesty notes of lemon, grapefruit, and mandarin. Green tea and cedarwood base for a clean finish. Perfect for daily wear and warm weather. 100ml spray.",
+    "price": "2800",
+    "discount": "2100",
+    "category": "Perfume",
+    "size": "",
+    "quantity": "40",
+    "quantityType": "bottle"
+  },
+  {
+    "id": "item-p5",
+    "name": "Amber Velvet Fragrance",
+    "mainImage": "https://images.unsplash.com/photo-1563170351-be82bc888aa4?w=500&h=700&fit=crop",
+    "extraImages": [
+      "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=500&h=700&fit=crop",
+      "https://images.unsplash.com/photo-1541643600914-78b084683601?w=500&h=700&fit=crop",
+      "https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?w=500&h=700&fit=crop"
+    ],
+    "description": "Warm and sensual amber fragrance with velvet-soft base notes. Blends of amber, vanilla orchid, and tonka bean. Unisex scent with excellent projection. Premium 80ml glass bottle with magnetic cap.",
+    "price": "7800",
+    "discount": "5800",
+    "category": "Perfume",
+    "size": "",
+    "quantity": "12",
+    "quantityType": "bottle"
+  },
+  {
+    "id": "item-win1",
     "name": "Wool Blend Overcoat",
-    "mainImage": "https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=500&h=700&fit=crop",
-    "extraImages": [],
-    "description": "Sophisticated wool blend overcoat with double-breasted closure. Features a classic collar, side pockets, and a knee-length cut. A wardrobe essential for cold weather.",
+    "mainImage": "https://images.unsplash.com/photo-1544923246-77307dd270b1?w=500&h=700&fit=crop",
+    "extraImages": [
+      "https://images.unsplash.com/photo-1548624313-0396c75e4b1a?w=500&h=700&fit=crop",
+      "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=500&h=700&fit=crop",
+      "https://images.unsplash.com/photo-1544022613-e87ca75a784a?w=500&h=700&fit=crop"
+    ],
+    "description": "Premium wool blend overcoat with double-breasted button closure. Fully lined interior with side pockets. Classic notch lapel design. Knee-length cut for sophisticated winter styling.",
     "price": "15000",
     "discount": "12000",
     "category": "Winter Collection",
@@ -156,29 +187,241 @@
     "quantityType": "piece"
   },
   {
-    "id": "item-12",
-    "name": "Designer Bridal Gown",
-    "mainImage": "https://images.unsplash.com/photo-1519741497674-611481863552?w=500&h=700&fit=crop",
-    "extraImages": [],
-    "description": "Stunning designer bridal gown with delicate lace detailing. Features a sweetheart neckline, cathedral train, and button-back closure. Make your dream wedding a reality.",
-    "price": "65000",
-    "discount": "55000",
-    "category": "Bridal Collection",
-    "size": "S,M,L",
-    "quantity": "2",
+    "id": "item-win2",
+    "name": "Puffer Down Jacket",
+    "mainImage": "https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?w=500&h=700&fit=crop",
+    "extraImages": [
+      "https://images.unsplash.com/photo-1544923246-77307dd270b1?w=500&h=700&fit=crop",
+      "https://images.unsplash.com/photo-1548624313-0396c75e4b1a?w=500&h=700&fit=crop",
+      "https://images.unsplash.com/photo-1611312449408-fcece27cdbb7?w=500&h=700&fit=crop"
+    ],
+    "description": "Lightweight yet ultra-warm puffer jacket filled with premium goose down. Water-resistant outer shell with adjustable hood. Zippered pockets and elastic cuffs. Packable design for easy travel.",
+    "price": "9500",
+    "discount": "7200",
+    "category": "Winter Collection",
+    "size": "S,M,L,XL",
+    "quantity": "15",
     "quantityType": "piece"
   },
   {
-    "id": "item-1781603604391",
-    "name": "dd",
-    "mainImage": "",
-    "extraImages": [],
-    "description": "fcgdsfg",
-    "price": "4422",
-    "discount": "42",
-    "category": "ss",
-    "size": "s",
-    "quantity": "64",
+    "id": "item-win3",
+    "name": "Cashmere Knit Sweater",
+    "mainImage": "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=500&h=700&fit=crop",
+    "extraImages": [
+      "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=500&h=700&fit=crop",
+      "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=500&h=700&fit=crop",
+      "https://images.unsplash.com/photo-1544923246-77307dd270b1?w=500&h=700&fit=crop"
+    ],
+    "description": "Luxuriously soft 100% cashmere sweater with ribbed crew neck. Lightweight warmth perfect for layering. Classic fit with relaxed silhouette. Available in multiple colorways.",
+    "price": "8500",
+    "discount": "6500",
+    "category": "Winter Collection",
+    "size": "S,M,L,XL",
+    "quantity": "20",
+    "quantityType": "piece"
+  },
+  {
+    "id": "item-win4",
+    "name": "Leather Lined Boots",
+    "mainImage": "https://images.unsplash.com/photo-1542838132-92c53300491e?w=500&h=700&fit=crop",
+    "extraImages": [
+      "https://images.unsplash.com/photo-1548624313-0396c75e4b1a?w=500&h=700&fit=crop",
+      "https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?w=500&h=700&fit=crop",
+      "https://images.unsplash.com/photo-1544923246-77307dd270b1?w=500&h=700&fit=crop"
+    ],
+    "description": "Premium full-grain leather boots with warm fleece lining. Sturdy rubber sole with anti-slip grip. Side zip for easy wear. Waterproof treated for winter conditions.",
+    "price": "7500",
+    "discount": "5500",
+    "category": "Winter Collection",
+    "size": "39,40,41,42,43,44",
+    "quantity": "25",
+    "quantityType": "pair"
+  },
+  {
+    "id": "item-win5",
+    "name": "Velvet Evening Shawl",
+    "mainImage": "https://images.unsplash.com/photo-1520975916090-3105956dac38?w=500&h=700&fit=crop",
+    "extraImages": [
+      "https://images.unsplash.com/photo-1544923246-77307dd270b1?w=500&h=700&fit=crop",
+      "https://images.unsplash.com/photo-1548624313-0396c75e4b1a?w=500&h=700&fit=crop",
+      "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=500&h=700&fit=crop"
+    ],
+    "description": "Luxurious velvet shawl with satin trim and embroidered edges. Generously sized for versatile draping. Warm yet lightweight. Perfect for evening events and formal winter occasions.",
+    "price": "5500",
+    "discount": "4200",
+    "category": "Winter Collection",
+    "size": "",
+    "quantity": "18",
+    "quantityType": "piece"
+  },
+  {
+    "id": "item-s1",
+    "name": "Linen Breeze Shirt",
+    "mainImage": "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=500&h=700&fit=crop",
+    "extraImages": [
+      "https://images.unsplash.com/photo-1502716119720-b23a93e5fe1b?w=500&h=700&fit=crop",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=500&h=700&fit=crop",
+      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=500&h=700&fit=crop"
+    ],
+    "description": "Premium 100% linen shirt with relaxed summer fit. Breathable fabric keeps you cool in hot weather. Mandarin collar with wooden buttons. Pre-washed for extra softness.",
+    "price": "3500",
+    "discount": "2500",
+    "category": "Summer Collection",
+    "size": "S,M,L,XL",
+    "quantity": "35",
+    "quantityType": "piece"
+  },
+  {
+    "id": "item-s2",
+    "name": "Cotton Sundress",
+    "mainImage": "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=500&h=700&fit=crop",
+    "extraImages": [
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=500&h=700&fit=crop",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=500&h=700&fit=crop",
+      "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=500&h=700&fit=crop"
+    ],
+    "description": "Flowing cotton sundress with floral print. Adjustable spaghetti straps with smocked bodice. Side pockets and midi length. Perfect for beach days, brunches, and summer outings.",
+    "price": "3200",
+    "discount": "2400",
+    "category": "Summer Collection",
+    "size": "S,M,L,XL",
+    "quantity": "28",
+    "quantityType": "piece"
+  },
+  {
+    "id": "item-s3",
+    "name": "Beach Casual Shorts",
+    "mainImage": "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=500&h=700&fit=crop",
+    "extraImages": [
+      "https://images.unsplash.com/photo-1502716119720-b23a93e5fe1b?w=500&h=700&fit=crop",
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=500&h=700&fit=crop",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=500&h=700&fit=crop"
+    ],
+    "description": "Lightweight cotton-blend shorts perfect for beach and casual wear. Elastic waistband with drawstring. Quick-dry fabric with multiple pockets. Available in solid and striped patterns.",
+    "price": "2200",
+    "discount": "1600",
+    "category": "Summer Collection",
+    "size": "S,M,L,XL",
+    "quantity": "40",
+    "quantityType": "piece"
+  },
+  {
+    "id": "item-s4",
+    "name": "Maxi Beach Cover-Up",
+    "mainImage": "https://images.unsplash.com/photo-1502716119720-b23a93e5fe1b?w=500&h=700&fit=crop",
+    "extraImages": [
+      "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=500&h=700&fit=crop",
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=500&h=700&fit=crop",
+      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=500&h=700&fit=crop"
+    ],
+    "description": "Sheer maxi-length beach cover-up with delicate crochet detailing. V-neckline with tassel ties. Flowing silhouette that flatters every body type. Essential resort-wear piece.",
+    "price": "2800",
+    "discount": "2100",
+    "category": "Summer Collection",
+    "size": "S,M,L",
+    "quantity": "22",
+    "quantityType": "piece"
+  },
+  {
+    "id": "item-s5",
+    "name": "Straw Summer Hat",
+    "mainImage": "https://images.unsplash.com/photo-1529958030586-3aae4ca485ff?w=500&h=700&fit=crop",
+    "extraImages": [
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=500&h=700&fit=crop",
+      "https://images.unsplash.com/photo-1502716119720-b23a93e5fe1b?w=500&h=700&fit=crop",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=500&h=700&fit=crop"
+    ],
+    "description": "Handwoven natural straw sun hat with wide brim. Adjustable inner band for secure fit. UPF 50+ sun protection. Foldable and packable — perfect for vacations and outdoor events.",
+    "price": "1800",
+    "discount": "1200",
+    "category": "Summer Collection",
+    "size": "",
+    "quantity": "50",
+    "quantityType": "piece"
+  },
+  {
+    "id": "item-wb1",
+    "name": "Italian Leather Wallet",
+    "mainImage": "https://images.unsplash.com/photo-1627123424574-724758594e93?w=500&h=700&fit=crop",
+    "extraImages": [
+      "https://images.unsplash.com/photo-1606502281004-f86cf1282af4?w=500&h=700&fit=crop",
+      "https://images.unsplash.com/photo-1624222247344-550fb60583dc?w=500&h=700&fit=crop",
+      "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=700&fit=crop"
+    ],
+    "description": "Handcrafted Italian genuine leather bifold wallet. Features 8 card slots, 2 bill compartments, and ID window. RFID blocking technology for security. Comes in premium gift box.",
+    "price": "4500",
+    "discount": "3200",
+    "category": "Wallet/Bags",
+    "size": "",
+    "quantity": "30",
+    "quantityType": "piece"
+  },
+  {
+    "id": "item-wb2",
+    "name": "Designer Tote Bag",
+    "mainImage": "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500&h=700&fit=crop",
+    "extraImages": [
+      "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=500&h=700&fit=crop",
+      "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=500&h=700&fit=crop",
+      "https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=500&h=700&fit=crop"
+    ],
+    "description": "Spacious designer tote bag in premium vegan leather. Structured shape with magnetic snap closure. Interior zip pocket and organizer slots. Reinforced handles with gold-tone hardware.",
+    "price": "6500",
+    "discount": "4800",
+    "category": "Wallet/Bags",
+    "size": "",
+    "quantity": "15",
+    "quantityType": "piece"
+  },
+  {
+    "id": "item-wb3",
+    "name": "Leather Crossbody Bag",
+    "mainImage": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=700&fit=crop",
+    "extraImages": [
+      "https://images.unsplash.com/photo-1627123424574-724758594e93?w=500&h=700&fit=crop",
+      "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=500&h=700&fit=crop",
+      "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=500&h=700&fit=crop"
+    ],
+    "description": "Compact genuine leather crossbody bag with adjustable strap. Front flap with magnetic closure. Multiple compartments for organized storage. Lightweight and perfect for everyday use.",
+    "price": "5500",
+    "discount": "4200",
+    "category": "Wallet/Bags",
+    "size": "",
+    "quantity": "20",
+    "quantityType": "piece"
+  },
+  {
+    "id": "item-wb4",
+    "name": "Premium Travel Backpack",
+    "mainImage": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=700&fit=crop",
+    "extraImages": [
+      "https://images.unsplash.com/photo-1547949003-9792a18a2601?w=500&h=700&fit=crop",
+      "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500&h=700&fit=crop",
+      "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=500&h=700&fit=crop"
+    ],
+    "description": "Premium travel backpack with padded laptop compartment (fits up to 15.6\"). Water-resistant fabric with anti-theft hidden zipper. USB charging port and ergonomic back padding. 40L capacity.",
+    "price": "7500",
+    "discount": "5500",
+    "category": "Wallet/Bags",
+    "size": "",
+    "quantity": "18",
+    "quantityType": "piece"
+  },
+  {
+    "id": "item-wb5",
+    "name": "Evening Clutch Purse",
+    "mainImage": "https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=500&h=700&fit=crop",
+    "extraImages": [
+      "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500&h=700&fit=crop",
+      "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=500&h=700&fit=crop",
+      "https://images.unsplash.com/photo-1627123424574-724758594e93?w=500&h=700&fit=crop"
+    ],
+    "description": "Elegant evening clutch with crystal-embellished clasp. Satin-lined interior with card slot. Detachable chain strap for shoulder carry. Perfect for weddings, parties, and formal events.",
+    "price": "3800",
+    "discount": "2800",
+    "category": "Wallet/Bags",
+    "size": "",
+    "quantity": "25",
     "quantityType": "piece"
   }
 ]

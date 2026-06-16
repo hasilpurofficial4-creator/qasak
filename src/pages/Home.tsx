@@ -66,7 +66,7 @@ export default function Home() {
             <div className="hero-img-wrapper">
               <div className="hero-img-glow"></div>
               <img
-                src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&h=800&fit=crop"
+                src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=800&fit=crop"
                 alt="QASAK Fashion"
                 loading="eager"
               />
