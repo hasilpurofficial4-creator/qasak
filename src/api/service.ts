@@ -1,10 +1,16 @@
 const API_BASE = '/api';
 
-async function request(url: string, options: RequestInit = {}) {
+interface RequestOptions {
+  method?: string;
+  body?: any;
+  headers?: Record<string, string>;
+}
+
+async function request(url: string, options: RequestOptions = {}) {
   const res = await fetch(`${API_BASE}${url}`, {
+    method: options.method,
     headers: { 'Content-Type': 'application/json', ...options.headers },
-    ...options,
-    body: options.body ? JSON.stringify(options.body) : undefined
+    body: options.body !== undefined ? JSON.stringify(options.body) : undefined
   });
   if (!res.ok) {
     const err = await res.json().catch(() => ({ error: 'Request failed' }));
