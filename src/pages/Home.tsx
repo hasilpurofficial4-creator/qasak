@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getItems, getCategories } from '../api/service';
+import { useCart } from '../store/CartContext';
 import type { Product, Category } from '../types';
-import { Truck, Shield, Headphones, RefreshCw, Zap, Heart, ArrowRight, Eye } from '../components/Icons';
+import { Truck, Shield, Headphones, RefreshCw, Zap, ArrowRight, Eye, ShoppingCart } from '../components/Icons';
 import './Home.css';
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
   const [search, setSearch] = useState('');
   const [filterCat, setFilterCat] = useState('');
   const [sortBy, setSortBy] = useState('');
+  const { addToCart } = useCart();
 
   useEffect(() => {
     Promise.all([getItems(), getCategories()])
@@ -36,6 +38,18 @@ export default function Home() {
   const handleCategoryClick = (catName: string) => {
     setFilterCat(catName);
     document.getElementById('items')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleAddToCart = (e: React.MouseEvent, product: Product) => {
+    e.preventDefault();
+    e.stopPropagation();
+    addToCart({
+      id: product.id,
+      name: product.name,
+      price: product.discount || product.price,
+      image: product.mainImage,
+      quantity: 1
+    });
   };
 
   const trending = products.filter(p => p.discount && Number(p.discount) < Number(p.price)).slice(0, 6);
@@ -150,11 +164,16 @@ export default function Home() {
         <h2 className="section-title">Our Collection</h2>
         <p className="section-subtitle">Premium fashion pieces handpicked for you</p>
 
-        {/* Quick Category Chips */}
-        <div className="category-chips">
-          <button className={`chip ${!filterCat ? 'chip-active' : ''}`} onClick={() => setFilterCat('')}>All</button>
+        {/* Quick Category Selector Cards */}
+        <div className="cat-selector-grid">
+          <button className={`cat-selector-card ${!filterCat ? 'cat-selector-active' : ''}`} onClick={() => setFilterCat('')}>
+            <span className="cat-selector-label">All</span>
+          </button>
           {categories.map(c => (
-            <button key={c.id} className={`chip ${filterCat === c.name ? 'chip-active' : ''}`} onClick={() => setFilterCat(c.name)}>{c.name}</button>
+            <button key={c.id} className={`cat-selector-card ${filterCat === c.name ? 'cat-selector-active' : ''}`} onClick={() => setFilterCat(c.name)}>
+              <img src={c.image} alt={c.name} className="cat-selector-img" loading="lazy" />
+              <span className="cat-selector-label">{c.name}</span>
+            </button>
           ))}
         </div>
 
@@ -210,6 +229,9 @@ export default function Home() {
                     )}
                   </div>
                 </div>
+                <button className="product-cart-btn" onClick={(e) => handleAddToCart(e, product)} aria-label="Add to cart">
+                  <ShoppingCart size={18} />
+                </button>
               </Link>
             ))}
           </div>

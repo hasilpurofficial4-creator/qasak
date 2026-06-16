@@ -3,8 +3,43 @@ import { useNavigate } from 'react-router-dom';
 import { getItems, addItem, updateItem, deleteItem, getCategories, addCategory, updateCategory, deleteCategory, getOrders, updateOrder, deleteOrder, getContacts, deleteContact, getSettings, updateSettings, uploadToImgBB } from '../api/service';
 import toast from 'react-hot-toast';
 import type { Product, Category, Order, ContactMessage, Settings } from '../types';
-import { BarChart, ShoppingBag, Grid, Package, MessageCircle, Settings as SettingsIcon, Home, LogOut, Bell, Trash, ShoppingCart, Users, Menu } from '../components/Icons';
+import { BarChart, ShoppingBag, Grid, Package, MessageCircle, Settings as SettingsIcon, Home, LogOut, Bell, Trash, ShoppingCart, Users, Menu, Plus, X } from '../components/Icons';
 import './AdminDashboard.css';
+
+/* Image Upload Zone */
+function ImageUpload({ label, value, onUpload, uploading, multiple }: { label: string; value: string; onUpload: (e: React.ChangeEvent<HTMLInputElement>) => void; uploading: boolean; multiple?: boolean }) {
+  const images = value ? value.split(',').filter(Boolean) : [];
+  return (
+    <div className="form-group">
+      <label>{label}</label>
+      <div className={`image-upload-zone ${images.length > 0 ? 'has-image' : ''}`}>
+        {images.length > 0 && !multiple && (
+          <div className="image-preview-single">
+            <img src={images[0]} alt="Preview" />
+          </div>
+        )}
+        {images.length > 0 && multiple && (
+          <div className="image-preview-grid">
+            {images.map((url, i) => (
+              <div key={i} className="image-preview-thumb"><img src={url} alt={`img-${i}`} /></div>
+            ))}
+          </div>
+        )}
+        <label className={`image-drop-label ${images.length > 0 ? 'has-preview' : ''}`}>
+          {uploading ? (
+            <span className="uploading-spinner">Uploading...</span>
+          ) : (
+            <>
+              <Plus size={24} />
+              <span>{images.length > 0 ? 'Change' : 'Select Image'}</span>
+            </>
+          )}
+          <input type="file" accept="image/*" multiple={multiple} onChange={onUpload} hidden disabled={uploading} />
+        </label>
+      </div>
+    </div>
+  );
+}
 
 type Tab = 'dashboard' | 'products' | 'categories' | 'orders' | 'contacts' | 'settings';
 
@@ -326,17 +361,12 @@ function ProductsTab({ products, categories, onRefresh }: { products: Product[];
               <label>Discount Price</label>
               <input className="input-field" type="number" value={form.discount} onChange={e => setForm({...form, discount: e.target.value})} />
             </div>
-            <div className="form-group">
-              <label>Main Image URL</label>
-              <input className="input-field" value={form.mainImage} onChange={e => setForm({...form, mainImage: e.target.value})} placeholder="URL or upload below" />
-              <input type="file" accept="image/*" onChange={e => handleImageUpload(e, 'mainImage')} style={{marginTop: '8px'}} />
-              {uploading && <p className="upload-status">Uploading...</p>}
-            </div>
-            <div className="form-group">
-              <label>Extra Images (comma-separated URLs)</label>
-              <input className="input-field" value={form.extraImages} onChange={e => setForm({...form, extraImages: e.target.value})} placeholder="url1,url2" />
-              <input type="file" accept="image/*" multiple onChange={e => handleImageUpload(e, 'extraImages')} style={{marginTop: '8px'}} />
-            </div>
+          </div>
+          <div className="form-grid">
+            <ImageUpload label="Main Image *" value={form.mainImage} onUpload={e => handleImageUpload(e, 'mainImage')} uploading={uploading} />
+            <ImageUpload label="Extra Images" value={form.extraImages} onUpload={e => handleImageUpload(e, 'extraImages')} uploading={uploading} multiple />
+          </div>
+          <div className="form-grid">
             <div className="form-group full-width">
               <label>Description</label>
               <textarea className="input-field" rows={3} value={form.description} onChange={e => setForm({...form, description: e.target.value})} />
@@ -397,10 +427,26 @@ function CategoriesTab({ categories, onRefresh }: { categories: Category[]; onRe
   const [showForm, setShowForm] = useState(false);
   const [editing, setEditing] = useState<Category | null>(null);
   const [form, setForm] = useState({ name: '', image: '' });
+  const [uploading, setUploading] = useState(false);
 
   const resetForm = () => { setForm({ name: '', image: '' }); setEditing(null); setShowForm(false); };
 
   const handleEdit = (c: Category) => { setForm({ name: c.name, image: c.image }); setEditing(c); setShowForm(true); };
+
+  const handleCatImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = e.target.files;
+    if (!files || files.length === 0) return;
+    setUploading(true);
+    try {
+      const url = await uploadToImgBB(files[0]);
+      setForm({ ...form, image: url });
+      toast.success('Image uploaded!');
+    } catch {
+      toast.error('Upload failed');
+    } finally {
+      setUploading(false);
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -435,11 +481,8 @@ function CategoriesTab({ categories, onRefresh }: { categories: Category[]; onRe
               <label>Category Name *</label>
               <input className="input-field" value={form.name} onChange={e => setForm({...form, name: e.target.value})} required />
             </div>
-            <div className="form-group">
-              <label>Image URL</label>
-              <input className="input-field" value={form.image} onChange={e => setForm({...form, image: e.target.value})} placeholder="https://..." />
-            </div>
           </div>
+          <ImageUpload label="Category Image" value={form.image} onUpload={handleCatImageUpload} uploading={uploading} />
           <div className="form-actions">
             <button type="submit" className="btn-neon">{editing ? 'Update' : 'Add'}</button>
             <button type="button" className="btn-outline" onClick={resetForm}>Cancel</button>
@@ -598,8 +641,24 @@ function SettingsTab({ settings, onRefresh }: { settings: Settings | null; onRef
   const [form, setForm] = useState<Settings>(settings || {
     title: '', siteName: '', logo: '', heroImage: '', headerText: '', footerText: '', mobile: '', email: '', address: ''
   });
+  const [uploading, setUploading] = useState(false);
 
   useEffect(() => { if (settings) setForm(settings); }, [settings]);
+
+  const handleSettingImageUpload = async (e: React.ChangeEvent<HTMLInputElement>, field: 'logo' | 'heroImage') => {
+    const files = e.target.files;
+    if (!files || files.length === 0) return;
+    setUploading(true);
+    try {
+      const url = await uploadToImgBB(files[0]);
+      setForm({ ...form, [field]: url });
+      toast.success('Image uploaded!');
+    } catch {
+      toast.error('Upload failed');
+    } finally {
+      setUploading(false);
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -623,14 +682,12 @@ function SettingsTab({ settings, onRefresh }: { settings: Settings | null; onRef
             <label>Site Name</label>
             <input className="input-field" value={form.siteName} onChange={e => setForm({...form, siteName: e.target.value})} />
           </div>
-          <div className="form-group">
-            <label>Logo URL</label>
-            <input className="input-field" value={form.logo} onChange={e => setForm({...form, logo: e.target.value})} />
-          </div>
-          <div className="form-group">
-            <label>Hero Image URL</label>
-            <input className="input-field" value={form.heroImage} onChange={e => setForm({...form, heroImage: e.target.value})} />
-          </div>
+        </div>
+        <div className="form-grid">
+          <ImageUpload label="Logo" value={form.logo || ''} onUpload={e => handleSettingImageUpload(e, 'logo')} uploading={uploading} />
+          <ImageUpload label="Hero Image" value={form.heroImage || ''} onUpload={e => handleSettingImageUpload(e, 'heroImage')} uploading={uploading} />
+        </div>
+        <div className="form-grid">
           <div className="form-group">
             <label>Header Text</label>
             <input className="input-field" value={form.headerText} onChange={e => setForm({...form, headerText: e.target.value})} />

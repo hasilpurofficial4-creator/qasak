@@ -292,36 +292,58 @@
   padding: 14px;
 }
 
-/* Category Chips */
-.category-chips {
+/* Category Selector Cards */
+.cat-selector-grid {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   flex-wrap: wrap;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
-.chip {
-  padding: 8px 20px;
+.cat-selector-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px 10px 10px;
   border-radius: 50px;
   border: 1px solid var(--border-glow);
-  background: transparent;
+  background: var(--bg-secondary);
   color: var(--text-secondary);
   font-family: var(--font-heading);
   font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
+  overflow: hidden;
 }
 
-.chip:hover {
+.cat-selector-card:hover {
   border-color: var(--neon-purple);
   color: var(--neon-purple);
+  transform: translateY(-2px);
 }
 
-.chip-active {
+.cat-selector-active {
   background: linear-gradient(135deg, var(--neon-purple), var(--neon-blue));
   border-color: transparent;
   color: #fff;
+  box-shadow: 0 4px 20px rgba(184, 41, 227, 0.3);
+}
+
+.cat-selector-active:hover {
+  color: #fff;
+}
+
+.cat-selector-img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255,255,255,0.2);
+}
+
+.cat-selector-label {
+  white-space: nowrap;
 }
 
 /* Shop Controls */
@@ -432,7 +454,7 @@
   z-index: 2;
 }
 
-.product-info { padding: 16px; }
+.product-info { padding: 16px; padding-right: 56px; position: relative; }
 
 .product-category {
   font-size: 0.75rem;
@@ -466,6 +488,35 @@
   font-size: 0.9rem;
   color: var(--text-muted);
   text-decoration: line-through;
+}
+
+/* Product Add to Cart Button */
+.product-cart-btn {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(135deg, var(--neon-purple), var(--neon-blue));
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  z-index: 3;
+  box-shadow: 0 4px 16px rgba(184, 41, 227, 0.3);
+}
+
+.product-cart-btn:hover {
+  transform: scale(1.15);
+  box-shadow: 0 6px 24px rgba(184, 41, 227, 0.5);
+}
+
+.product-card {
+  position: relative;
 }
 
 .no-results {
