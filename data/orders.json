@@ -1,37 +1,5 @@
 [
   {
-    "id": "ORD-1003",
-    "createdAt": "2026-06-10T09:00:00.000Z",
-    "customer": {
-      "name": "Hamza Sheikh",
-      "mobile": "+92 333 5551234",
-      "email": "hamza.sheikh@outlook.com",
-      "address": "Street 7, F-8/3",
-      "city": "Islamabad",
-      "district": "Islamabad"
-    },
-    "items": [
-      {
-        "id": "item-3",
-        "name": "Premium Slim Fit Blazer",
-        "image": "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=500&h=700&fit=crop",
-        "price": "7500",
-        "quantity": "1",
-        "size": "L"
-      },
-      {
-        "id": "item-9",
-        "name": "Tailored Office Trousers",
-        "image": "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=500&h=700&fit=crop",
-        "price": "3500",
-        "quantity": "1",
-        "size": "L"
-      }
-    ],
-    "total": "11000",
-    "status": "Delivered"
-  },
-  {
     "id": "ORD-1004",
     "createdAt": "2026-06-05T16:45:00.000Z",
     "customer": {
