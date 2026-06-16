@@ -1,37 +1,5 @@
 [
   {
-    "id": "ORD-1001",
-    "createdAt": "2026-06-14T10:30:00.000Z",
-    "customer": {
-      "name": "Ayesha Khan",
-      "mobile": "+92 321 1234567",
-      "email": "ayesha.khan@gmail.com",
-      "address": "House 45, Block C, Gulberg III",
-      "city": "Lahore",
-      "district": "Lahore"
-    },
-    "items": [
-      {
-        "id": "item-1",
-        "name": "Royal Silk Evening Gown",
-        "image": "https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=500&h=700&fit=crop",
-        "price": "6800",
-        "quantity": "1",
-        "size": "M"
-      },
-      {
-        "id": "item-8",
-        "name": "Sequin Party Top",
-        "image": "https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=500&h=700&fit=crop",
-        "price": "2200",
-        "quantity": "2",
-        "size": "S"
-      }
-    ],
-    "total": "11200",
-    "status": "Delivered"
-  },
-  {
     "id": "ORD-1002",
     "createdAt": "2026-06-13T14:15:00.000Z",
     "customer": {
