@@ -30,29 +30,5 @@
     ],
     "total": "10800",
     "status": "Delivered"
-  },
-  {
-    "customer": {
-      "name": "zaid-bwp-wa-bot2",
-      "mobile": "+1",
-      "email": "hasilpurofficial4@gmail.com",
-      "address": "shan0987654.uk@gmail.com",
-      "city": "hasilpur",
-      "district": "bwp"
-    },
-    "items": [
-      {
-        "id": "item-6",
-        "name": "Cashmere Winter Shawl",
-        "image": "https://images.unsplash.com/photo-1544923246-77307dd270b1?w=500&h=700&fit=crop",
-        "price": "9500",
-        "quantity": "2",
-        "size": ""
-      }
-    ],
-    "total": "19000",
-    "id": "ORD-1781603423094",
-    "createdAt": "2026-06-16T09:50:23.094Z",
-    "status": "Delivered"
   }
 ]
