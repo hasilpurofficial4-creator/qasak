@@ -13,12 +13,24 @@ import Contact from './pages/Contact';
 import About from './pages/About';
 import Admin from './admin/Admin';
 import InstallPrompt from './components/InstallPrompt';
+import { RefreshCw } from './components/Icons';
 import './styles/global.css';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
   return null;
+}
+
+function OrientationLock() {
+  useEffect(() => {
+    try {
+      if (screen.orientation && (screen.orientation as any).lock) {
+        (screen.orientation as any).lock('portrait').catch(() => {});
+      }
+    } catch {}
+  }, []);
+  return <div className="rotate-overlay"><div className="rotate-content"><RefreshCw size={48} color="#b829e3" /><p>Please rotate your device to portrait mode</p></div></div>;
 }
 
 function CustomerLayout() {
@@ -54,6 +66,7 @@ export default function App() {
     <BrowserRouter>
       <CartProvider>
         <SettingsProvider>
+          <OrientationLock />
           <ScrollToTop />
           {showIntro && <IntroScreen onComplete={handleIntroComplete} />}
           <Toaster
