@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getItems, getCategories } from '../api/service';
 import type { Product, Category } from '../types';
+import { Truck, Shield, Headphones, RefreshCw, Zap, Heart, ArrowRight, Eye } from '../components/Icons';
 import './Home.css';
 
 export default function Home() {
@@ -27,7 +28,7 @@ export default function Home() {
     .filter(p => !filterCat || p.category === filterCat)
     .sort((a, b) => {
       if (sortBy === 'price-asc') return Number(a.discount || a.price) - Number(b.discount || b.price);
-      if (sortBy === 'price-desc') return Number(b.discount || b.price) - Number(a.discount || a.price);
+      if (sortBy === 'price-desc') return Number(b.discount || b.price) - Number(a.discount || b.price);
       if (sortBy === 'name') return a.name.localeCompare(b.name);
       return 0;
     });
@@ -36,6 +37,8 @@ export default function Home() {
     setFilterCat(catName);
     document.getElementById('items')?.scrollIntoView({ behavior: 'smooth' });
   };
+
+  const trending = products.filter(p => p.discount && Number(p.discount) < Number(p.price)).slice(0, 6);
 
   return (
     <div className="home">
@@ -75,6 +78,14 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Trust Badges */}
+      <section className="trust-strip animate-fadeInUp" style={{ animationDelay: '0.8s' }}>
+        <div className="trust-badge"><Truck size={24} color="#b829e3" /><span>Free Shipping</span></div>
+        <div className="trust-badge"><Shield size={24} color="#00d4ff" /><span>Secure Payment</span></div>
+        <div className="trust-badge"><Headphones size={24} color="#ff2d95" /><span>24/7 Support</span></div>
+        <div className="trust-badge"><RefreshCw size={24} color="#ffd700" /><span>Easy Returns</span></div>
+      </section>
+
       {/* Categories Section */}
       <section className="section" id="categories">
         <h2 className="section-title">Collections</h2>
@@ -83,28 +94,69 @@ export default function Home() {
           {categories.map((cat, idx) => (
             <div
               key={cat.id}
-              className="category-card glass-card animate-fadeInUp"
+              className="category-card animate-fadeInUp"
               style={{ animationDelay: `${idx * 0.1}s` }}
               onClick={() => handleCategoryClick(cat.name)}
             >
-              <div className="category-img">
-                <img src={cat.image} alt={cat.name} loading="lazy"
-                  onError={(e) => { (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=300&h=200&fit=crop'; }}
-                />
-              </div>
-              <h3 className="category-name">{cat.name}</h3>
-              <div className="category-preview">
-                <p>View Collection</p>
+              <img src={cat.image} alt={cat.name} loading="lazy"
+                onError={(e) => { (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=300&h=200&fit=crop'; }}
+              />
+              <div className="category-overlay">
+                <h3 className="category-name">{cat.name}</h3>
+                <span className="category-cta">View Collection <ArrowRight size={16} /></span>
               </div>
             </div>
           ))}
         </div>
       </section>
 
+      {/* Trending Now */}
+      {trending.length > 0 && (
+        <section className="section trending-section">
+          <div className="trending-header">
+            <div>
+              <h2 className="section-title"><Zap size={28} color="#ffd700" /> Trending Now</h2>
+              <p className="section-subtitle">Hot deals you don't want to miss</p>
+            </div>
+            <a href="#items" className="trending-see-all">See All <ArrowRight size={16} /></a>
+          </div>
+          <div className="trending-scroll">
+            {trending.map((product) => (
+              <Link to={`/product/${product.id}`} key={product.id} className="trending-card">
+                <div className="trending-img">
+                  <img src={product.mainImage} alt={product.name} loading="lazy"
+                    onError={(e) => { (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=300&h=400&fit=crop'; }}
+                  />
+                  <span className="discount-badge">
+                    -{Math.round((1 - Number(product.discount) / Number(product.price)) * 100)}%
+                  </span>
+                </div>
+                <div className="trending-info">
+                  <p className="product-category">{product.category}</p>
+                  <h3 className="product-name">{product.name}</h3>
+                  <div className="product-price">
+                    <span className="current-price">Rs. {Number(product.discount || product.price).toLocaleString()}</span>
+                    <span className="original-price">Rs. {Number(product.price).toLocaleString()}</span>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* Items Section */}
       <section className="section" id="items">
         <h2 className="section-title">Our Collection</h2>
         <p className="section-subtitle">Premium fashion pieces handpicked for you</p>
+
+        {/* Quick Category Chips */}
+        <div className="category-chips">
+          <button className={`chip ${!filterCat ? 'chip-active' : ''}`} onClick={() => setFilterCat('')}>All</button>
+          {categories.map(c => (
+            <button key={c.id} className={`chip ${filterCat === c.name ? 'chip-active' : ''}`} onClick={() => setFilterCat(c.name)}>{c.name}</button>
+          ))}
+        </div>
 
         <div className="shop-controls">
           <input
@@ -114,10 +166,6 @@ export default function Home() {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
-          <select className="input-field filter-select" value={filterCat} onChange={(e) => setFilterCat(e.target.value)}>
-            <option value="">All Categories</option>
-            {categories.map(c => <option key={c.id} value={c.name}>{c.name}</option>)}
-          </select>
           <select className="input-field sort-select" value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
             <option value="">Sort By</option>
             <option value="price-asc">Price: Low to High</option>
@@ -143,6 +191,9 @@ export default function Home() {
                   <img src={product.mainImage} alt={product.name} loading="lazy"
                     onError={(e) => { (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=300&h=400&fit=crop'; }}
                   />
+                  <div className="product-overlay">
+                    <span className="product-overlay-btn"><Eye size={18} /> Quick View</span>
+                  </div>
                   {product.discount && Number(product.discount) < Number(product.price) && (
                     <span className="discount-badge">
                       -{Math.round((1 - Number(product.discount) / Number(product.price)) * 100)}%

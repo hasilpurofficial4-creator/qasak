@@ -12,6 +12,7 @@ import Checkout from './pages/Checkout';
 import Contact from './pages/Contact';
 import About from './pages/About';
 import Admin from './admin/Admin';
+import InstallPrompt from './components/InstallPrompt';
 import './styles/global.css';
 
 function ScrollToTop() {
@@ -34,6 +35,7 @@ function CustomerLayout() {
         </Routes>
       </main>
       <Footer />
+      <InstallPrompt />
     </>
   );
 }

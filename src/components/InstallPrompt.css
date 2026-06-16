@@ -1,0 +1,108 @@
+.install-prompt {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  background: rgba(20, 20, 40, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(184, 41, 227, 0.4);
+  border-radius: 16px;
+  padding: 16px 20px;
+  max-width: 440px;
+  width: calc(100% - 32px);
+  box-shadow: 0 8px 40px rgba(184, 41, 227, 0.2), 0 0 60px rgba(184, 41, 227, 0.08);
+  animation: installSlideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes installSlideUp {
+  from { transform: translateX(-50%) translateY(100px); opacity: 0; }
+  to { transform: translateX(-50%) translateY(0); opacity: 1; }
+}
+
+.install-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s, background 0.2s;
+}
+
+.install-close:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.1);
+}
+
+.install-content {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.install-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  background: rgba(184, 41, 227, 0.15);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.install-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.install-text h4 {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 2px;
+}
+
+.install-text p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.install-btn {
+  flex-shrink: 0;
+  padding: 10px 24px;
+  background: linear-gradient(135deg, var(--neon-purple), var(--neon-blue));
+  border: none;
+  border-radius: 50px;
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  letter-spacing: 0.5px;
+}
+
+.install-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(184, 41, 227, 0.4);
+}
+
+@media (max-width: 480px) {
+  .install-prompt {
+    bottom: 16px;
+    padding: 12px 16px;
+  }
+  .install-icon { width: 40px; height: 40px; }
+  .install-icon svg { width: 22px; height: 22px; }
+  .install-btn { padding: 8px 18px; font-size: 0.8rem; }
+}
