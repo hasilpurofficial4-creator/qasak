@@ -7,14 +7,5 @@
     "subject": "Custom Bridal Order",
     "message": "I would like to inquire about custom bridal lehenga orders. Is it possible to customize the color and embroidery pattern? My wedding is in August.",
     "createdAt": "2026-06-11T15:00:00.000Z"
-  },
-  {
-    "id": "MSG-1003",
-    "name": "Usman Tariq",
-    "method": "mobile",
-    "contact": "+92 345 6789012",
-    "subject": "Return Request",
-    "message": "I received my order (ORD-1004) but the size doesn't fit. I'd like to exchange it for a larger size. Please guide me on the return process.",
-    "createdAt": "2026-06-09T12:45:00.000Z"
   }
 ]
