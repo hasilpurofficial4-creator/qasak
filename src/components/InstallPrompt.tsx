@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Download, X } from './Icons';
 import './InstallPrompt.css';
 
@@ -8,8 +8,9 @@ interface BeforeInstallPromptEvent extends Event {
 }
 
 export default function InstallPrompt() {
-  const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
+  const deferredPromptRef = useRef<BeforeInstallPromptEvent | null>(null);
   const [show, setShow] = useState(false);
+  const [canInstall, setCanInstall] = useState(false);
 
   useEffect(() => {
     // Track visits
@@ -24,36 +25,45 @@ export default function InstallPrompt() {
 
     const handler = (e: Event) => {
       e.preventDefault();
-      setDeferredPrompt(e as BeforeInstallPromptEvent);
-      // Small delay so it doesn't appear instantly
+      deferredPromptRef.current = e as BeforeInstallPromptEvent;
+      setCanInstall(true);
       setTimeout(() => setShow(true), 2000);
     };
 
     window.addEventListener('beforeinstallprompt', handler);
 
-    // Fallback: show a generic install banner even without PWA support
-    const fallbackTimer = setTimeout(() => {
-      if (!deferredPrompt && !alreadyInstalled && !dismissed && visitCount <= 3) {
-        setShow(true);
-      }
-    }, 3000);
+    // Listen for app installed
+    const installedHandler = () => {
+      localStorage.setItem('qasak_app_installed', 'true');
+      setShow(false);
+    };
+    window.addEventListener('appinstalled', installedHandler);
 
     return () => {
       window.removeEventListener('beforeinstallprompt', handler);
-      clearTimeout(fallbackTimer);
+      window.removeEventListener('appinstalled', installedHandler);
     };
   }, []);
 
   const handleInstall = async () => {
-    if (deferredPrompt) {
-      deferredPrompt.prompt();
-      const { outcome } = await deferredPrompt.userChoice;
+    const prompt = deferredPromptRef.current;
+    if (prompt) {
+      prompt.prompt();
+      const { outcome } = await prompt.userChoice;
       if (outcome === 'accepted') {
         localStorage.setItem('qasak_app_installed', 'true');
       }
-      setDeferredPrompt(null);
+      deferredPromptRef.current = null;
+      setShow(false);
+    } else {
+      // No native prompt available — show manual instructions
+      const ua = navigator.userAgent.toLowerCase();
+      if (ua.includes('safari') && !ua.includes('chrome')) {
+        alert('To install: tap the Share button and then "Add to Home Screen"');
+      } else {
+        alert('To install: open this page in Chrome/Edge and tap the install icon in the address bar or menu');
+      }
     }
-    setShow(false);
   };
 
   const handleDismiss = () => {
