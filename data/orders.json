@@ -38,5 +38,29 @@
     "id": "ORD-1781609232950",
     "createdAt": "2026-06-16T11:27:12.950Z",
     "status": "New Order"
+  },
+  {
+    "customer": {
+      "name": "ZAHID HUSSAIN",
+      "mobile": "03299931199",
+      "email": "dripmobiles@gmail.com",
+      "address": "shaili gharbi daak khana bakhshan khan tehsil chishtian",
+      "city": "Bahawalnagar",
+      "district": "bahawalpur"
+    },
+    "items": [
+      {
+        "id": "item-w1",
+        "name": "Classic Gold Chronograph",
+        "price": "9800",
+        "image": "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=500&h=700&fit=crop",
+        "quantity": "1",
+        "size": ""
+      }
+    ],
+    "total": "9800",
+    "id": "ORD-1782006939480",
+    "createdAt": "2026-06-21T01:55:39.480Z",
+    "status": "New Order"
   }
 ]
